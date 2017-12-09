@@ -10,7 +10,7 @@ import pprint
 Data = collections.namedtuple('data', 'created id mentionedPeople personEmail personId roomId roomType')
 
 app = Flask(__name__)
-app.config.from_object('botran.default_settings')
+app.config.from_object('default_settings')
 
 
 def set_up_webhook(app_id, target_url):

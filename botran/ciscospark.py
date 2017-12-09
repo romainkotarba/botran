@@ -75,7 +75,7 @@ def get_message(message_id):
     """
     Shows details for a message, by message ID.
     :param message_id: Specify the message ID in the messageId parameter in the URI.
-    :return: message details formatted in JSON 
+    :return: message details formatted in JSON
     """
 
     api_node = "{}messages/{}".format(SPARK_API_URL, message_id)
@@ -93,7 +93,7 @@ def get_message(message_id):
 def post_message(room_id, text=None, markdown=None):
     """
     Post a message to a room
-    
+
     :param room_id: The ID of the room to post in
     :param text: the message to post
     :return: nada
@@ -120,7 +120,7 @@ def invite_user(attendee, room_id):
     Add user to a Cisco Spark room
     :param attendee: email or id of person to add
     :param room_id: room id for membership
-    :return: 
+    :return:
     """
 
     print('* invite {}: {} ({})'.format(attendee.type, attendee.fullname, attendee.email))
@@ -149,7 +149,7 @@ def remove_user(attendee, room_id):
     Remove a user from a Cisco Spark room
     :param attendee: email or id of person to add
     :param room_id: room id for membership
-    :return: 
+    :return:
     """
 
     print('* Remove user {}: {} ({})'.format(attendee.type, attendee.fullname, attendee.email))
@@ -286,10 +286,10 @@ def register_webhook(name, target_url, resource, event, filter=None):
     Add a webhook to a Cisco resource
     for official documentation about API endpoint:
     https://developer.ciscospark.com/endpoint-webhooks-post.html
-    
+
     :param name: A user-friendly name for this webhook.
     :param target_url: The URL that receives POST requests for each event.
-    :param resource: The resource type for the webhook. Creating a webhook requires 'read' 
+    :param resource: The resource type for the webhook. Creating a webhook requires 'read'
     scope on the resource the webhook is for.
     :param event: The event type for the webhook.
     :param filter: The filter that defines the webhook scope.
@@ -342,4 +342,3 @@ def upload_file(file_path, mime_type, room_id, post_file_name, message):
     print("Webhook successfully created :)")
     print()
     return resp.json()
-
